@@ -1,0 +1,22 @@
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
+
+node_modules
+dist
+
+logs
+*.log
+pnpm-debug.log*
+.direnv
+.devenv
+
+# Otter.nvim related temp files
+*.otter.*
+
