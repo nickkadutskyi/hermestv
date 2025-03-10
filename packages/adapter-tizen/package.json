@@ -1,0 +1,53 @@
+{
+  "name": "@hermestv/adapter-tizen",
+  "version": "0.1.0",
+  "description": "Tizen platform adapter for HermesTV SDK",
+  "main": "./dist/hermestv-adapter-tizen.cjs",
+  "module": "./dist/hermestv-adapter-tizen.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --build && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts",
+    "prepublishOnly": "pnpm run build",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/hermestv-adapter-tizen.js",
+      "require": "./dist/hermestv-adapter-tizen.cjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./filesystem": {
+      "import": "./dist/filesystem.js",
+      "require": "./dist/filesystem.cjs",
+      "types": "./dist/src/filesystem.d.ts"
+    },
+    "./system": {
+      "import": "./dist/system.js",
+      "require": "./dist/system.cjs",
+      "types": "./dist/src/system.d.ts"
+    },
+    "./platform/*": "./platform/*"
+  },
+  "files": [
+    "dist",
+    "platform-files",
+    "README.md"
+  ],
+  "keywords": [
+    "tizen",
+    "tv",
+    "smart-tv",
+    "samsung"
+  ],
+  "author": "Nick Kadutskyi",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vite-plugin-dts": "^4.5.3"
+  }
+}

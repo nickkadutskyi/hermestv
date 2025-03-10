@@ -36,12 +36,14 @@
                   pkgs.nodejs
                   pkgs.pnpm
                   pkgs.eslint_d
+                  pkgs.prettierd
                 ];
 
                 enterShell = ''
                   echo "node: "$(node --version)
                   echo "pnpm: "$(pnpm --version)
                   echo "eslint_d: "$(eslint_d --version)
+                  echo "prettierd: "$(prettierd --version)
                 '';
               }
             ];

@@ -1,0 +1,20 @@
+{
+  "name": "@hermestv/monorepo",
+  "version": "0.1.0",
+  "description": "",
+  "types": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nick Kadutskyi",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.26.0"
+  }
+}
