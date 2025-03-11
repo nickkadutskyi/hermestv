@@ -2,13 +2,12 @@
   "name": "@hermestv/adapter-tizen",
   "version": "0.1.0",
   "description": "Tizen platform adapter for HermesTV SDK",
-  "main": "./dist/hermestv-adapter-tizen.cjs",
-  "module": "./dist/hermestv-adapter-tizen.mjs",
+  "type": "module",
+  "main": "./dist/hermestv-adapter-tizen.cjs.js",
+  "module": "./dist/hermestv-adapter-tizen.es.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
     "build": "tsc --build && vite build",
-    "preview": "vite preview",
     "lint": "eslint src --ext ts",
     "prepublishOnly": "pnpm run build",
     "clean": "rm -rf dist",
@@ -34,7 +33,7 @@
   },
   "files": [
     "dist",
-    "platform-files",
+    "platform",
     "README.md"
   ],
   "keywords": [

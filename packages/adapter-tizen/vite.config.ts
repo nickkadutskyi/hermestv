@@ -11,10 +11,7 @@ export default defineConfig({
         filesystem: resolve(__dirname, 'src/filesystem.ts'),
         system: resolve(__dirname, 'src/filesystem.ts'),
       },
-      name: 'HermesTVTizenAdapter',
-      // the proper extensions will be added
-      // fileName: (format, entryName) =>
-      //   `${entryName}${format === 'es' ? '' : `.${format}`}.${format === 'es' ? 'js' : 'cjs'}`,
+      name: 'HermesTVAdapterTizen',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -27,8 +24,6 @@ export default defineConfig({
       },
     },
     sourcemap: true,
-    // Generate minified output
-    // minify: 'terser',
   },
   plugins: [
     dts({
