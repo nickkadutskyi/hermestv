@@ -1,4 +1,4 @@
-import { MethodNotImplementedError } from './errors';
+import { MethodNotImplementedError } from './errors/index.ts';
 import { System } from './System';
 
 export default abstract class Adapter {

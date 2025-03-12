@@ -40,6 +40,10 @@ importers:
         version: 4.5.3(@types/node@18.19.80)(rollup@4.35.0)(typescript@5.8.2)(vite@6.2.1(@types/node@18.19.80))
 
   packages/adapter-tizen:
+    dependencies:
+      '@hermestv/adapter-core':
+        specifier: ^0.1.1
+        version: 0.1.1
     devDependencies:
       typescript:
         specifier: ^5.8.2
@@ -257,6 +261,9 @@ packages:
   '@eslint/plugin-kit@0.2.7':
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@hermestv/adapter-core@0.1.1':
+    resolution: {integrity: sha512-P0RnlMnH7B9qia1TEbPFxXbEMjbsTNUt0DPc46xZmUvkc443k4WyDgqpsKNeaJbeRXh6x2IMC7rDle/6yu+X8w==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1288,6 +1295,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.12.0
       levn: 0.4.1
+
+  '@hermestv/adapter-core@0.1.1': {}
 
   '@humanfs/core@0.19.1': {}
 
