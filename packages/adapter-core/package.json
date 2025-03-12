@@ -1,6 +1,6 @@
 {
   "name": "@hermestv/adapter-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared code for HermesTV adapters",
   "type": "module",
   "main": "./dist/hermestv-adapter-core.cjs",
