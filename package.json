@@ -4,6 +4,8 @@
   "description": "",
   "types": "module",
   "scripts": {
+    "build": "tsc --build && vite build",
+    "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

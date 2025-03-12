@@ -1,4 +1,4 @@
-import { MethodNotImplementedError } from './errors';
+import { MethodNotImplementedError } from './errors/index.ts';
 
 export interface System {
   getSerialNumber(): Promise<string>;

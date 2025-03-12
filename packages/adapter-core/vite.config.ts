@@ -19,7 +19,7 @@ export default defineConfig({
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {},
-        preserveModules: true,
+        // preserveModules: true,
         preserveModulesRoot: 'src',
         entryFileNames: '[name].js',
       },
