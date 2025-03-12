@@ -1,0 +1,36 @@
+{
+  "name": "@hermestv/adapter-core",
+  "version": "0.1.0",
+  "description": "Shared code for HermesTV adapters",
+  "type": "module",
+  "main": "./dist/hermestv-adapter-core.cjs",
+  "module": "./dist/hermestv-adapter-core.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build && vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "smart-tv",
+    "tv",
+    "hermestv"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/hermestv-adapter-core.js",
+      "require": "./dist/hermestv-adapter-core.cjs",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "author": "Nick Kadutskyi",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vite-plugin-dts": "^4.5.3"
+  }
+}

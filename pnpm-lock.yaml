@@ -27,6 +27,18 @@ importers:
         specifier: ^8.26.0
         version: 8.26.0(eslint@9.22.0)(typescript@5.8.2)
 
+  packages/adapter-core:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+      vite:
+        specifier: ^6.2.1
+        version: 6.2.1(@types/node@18.19.80)
+      vite-plugin-dts:
+        specifier: ^4.5.3
+        version: 4.5.3(@types/node@18.19.80)(rollup@4.35.0)(typescript@5.8.2)(vite@6.2.1(@types/node@18.19.80))
+
   packages/adapter-tizen:
     devDependencies:
       typescript:
