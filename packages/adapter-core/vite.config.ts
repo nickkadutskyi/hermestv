@@ -9,7 +9,7 @@ export default defineConfig({
       entry: {
         'hermestv-adapter-core': resolve(__dirname, 'src/index.ts'),
       },
-      name: 'HermesTVAdapterTizen',
+      name: 'HermesTVAdapterCore',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -21,7 +21,7 @@ export default defineConfig({
         globals: {},
         // preserveModules: true,
         preserveModulesRoot: 'src',
-        entryFileNames: '[name].js',
+        // entryFileNames: '[name].js',
       },
     },
     sourcemap: true,

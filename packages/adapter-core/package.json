@@ -1,6 +1,6 @@
 {
   "name": "@hermestv/adapter-core",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "description": "Shared code for HermesTV adapters",
   "type": "module",
   "main": "./dist/hermestv-adapter-core.cjs",
@@ -17,14 +17,13 @@
   ],
   "files": [
     "dist",
-    "README.md",
-    "src"
+    "README.md"
   ],
   "exports": {
     ".": {
       "import": "./dist/hermestv-adapter-core.js",
-      "require": "./dist/hermestv-adapter-core.cjs",
-      "types": "./dist/src/index.d.ts"
+      "require": "./dist/hermestv-adapter-core.umd.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "author": "Nick Kadutskyi",

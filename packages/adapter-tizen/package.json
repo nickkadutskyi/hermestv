@@ -1,6 +1,6 @@
 {
   "name": "@hermestv/adapter-tizen",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "description": "Tizen platform adapter for HermesTV SDK",
   "type": "module",
   "main": "./dist/hermestv-adapter-tizen.cjs",
@@ -16,8 +16,8 @@
   "exports": {
     ".": {
       "import": "./dist/hermestv-adapter-tizen.js",
-      "require": "./dist/hermestv-adapter-tizen.cjs",
-      "types": "./dist/src/index.d.ts"
+      "require": "./dist/hermestv-adapter-tizen.umd.cjs",
+      "types": "./dist/index.d.ts"
     },
     "./platform/*": "./platform/*"
   },
@@ -40,6 +40,6 @@
     "vite-plugin-dts": "^4.5.3"
   },
   "dependencies": {
-    "@hermestv/adapter-core": "^0.1.1"
+    "@hermestv/adapter-core": "^0.1.6"
   }
 }

@@ -8,8 +8,6 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points
       entry: {
         'hermestv-adapter-tizen': resolve(__dirname, 'src/index.ts'),
-        filesystem: resolve(__dirname, 'src/filesystem.ts'),
-        system: resolve(__dirname, 'src/filesystem.ts'),
       },
       name: 'HermesTVAdapterTizen',
     },
@@ -21,6 +19,7 @@ export default defineConfig({
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {},
+        preserveModulesRoot: 'src',
       },
     },
     sourcemap: true,
@@ -28,9 +27,10 @@ export default defineConfig({
   plugins: [
     dts({
       // Include type definitions in output
-      include: 'src',
+      include: ['src', 'node_modules/@hermestv/adapter-core/dist'],
       // Output path for type definitions
       outDir: 'dist',
+      rollupTypes: true,
     }),
   ],
 });

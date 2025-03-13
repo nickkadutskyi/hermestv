@@ -42,8 +42,8 @@ importers:
   packages/adapter-tizen:
     dependencies:
       '@hermestv/adapter-core':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.6
+        version: 0.1.6
     devDependencies:
       typescript:
         specifier: ^5.8.2
@@ -262,8 +262,8 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@hermestv/adapter-core@0.1.1':
-    resolution: {integrity: sha512-P0RnlMnH7B9qia1TEbPFxXbEMjbsTNUt0DPc46xZmUvkc443k4WyDgqpsKNeaJbeRXh6x2IMC7rDle/6yu+X8w==}
+  '@hermestv/adapter-core@0.1.6':
+    resolution: {integrity: sha512-tRXgtx99uL4aNbIrxwQFeNNnx1ZrVNnIf0KjgMG6JvN4snBlIvqMrZ6vkRuNuuOM65bTt3t6bbYqAQYHu706Bw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1296,7 +1296,7 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
-  '@hermestv/adapter-core@0.1.1': {}
+  '@hermestv/adapter-core@0.1.6': {}
 
   '@humanfs/core@0.19.1': {}
 

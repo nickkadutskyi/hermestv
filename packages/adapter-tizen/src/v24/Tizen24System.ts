@@ -1,29 +1,15 @@
-/**
- * System adapter interface
- */
-export interface SystemAdapter {
-  /**
-   * Gets the device serial number
-   * @returns Serial number as a string
-   */
-  getSerialNumber(): Promise<string>;
+import { System } from '@hermestv/adapter-core';
+import Tizen23System from '../v23/Tizen23System';
 
-  /**
-   * Gets the URL in the URL Launcher
-   * @returns URL as a string
-   */
-  getURLLauncherAddress(): Promise<string>;
-}
+export default class Tizen24System extends Tizen23System implements System {
+  // Minimum required Tizen version
+  protected static readonly MIN_MAJOR_VERSION = 2;
+  protected static readonly MIN_MINOR_VERSION = 4;
 
-/**
- * Creates a Tizen system adapter
- * @returns System operations object
- */
-export function createSystemAdapter(): SystemAdapter {
   /**
    * @returns Serial number of the device
    */
-  async function getSerialNumber(): Promise<string> {
+  public getSerialNumber(): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       try {
         const serialNumber = b2bapis.b2bcontrol.getSerialNumber();
@@ -38,7 +24,7 @@ export function createSystemAdapter(): SystemAdapter {
   /**
    * @returns URL in URL Launcher
    */
-  async function getURLLauncherAddress(): Promise<string> {
+  public getURLLauncherAddress(): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       try {
         const url = b2bapis.b2bcontrol.getURLLauncherAddress();
@@ -50,13 +36,4 @@ export function createSystemAdapter(): SystemAdapter {
       }
     });
   }
-
-  // Return the filesystem adapter object with proper typing
-  return {
-    getSerialNumber,
-    getURLLauncherAddress,
-  };
 }
-
-// Export as default
-export default createSystemAdapter();
