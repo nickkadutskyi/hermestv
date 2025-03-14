@@ -11,6 +11,6 @@ export default class Tizen24Adapter extends Tizen23Adapter implements Adapter {
 
   constructor(options: Options) {
     super(options);
-    this.system = new Tizen24System();
+    this.system = new Tizen24System(this.window);
   }
 }

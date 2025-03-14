@@ -3,6 +3,7 @@ import Tizen23System from './Tizen23System';
 
 export interface Options {
   window: Window;
+  system?: System;
 }
 
 export default class Tizen23Adapter extends BaseAdapter implements Adapter {
@@ -10,7 +11,7 @@ export default class Tizen23Adapter extends BaseAdapter implements Adapter {
 
   // Minimum required Tizen version
   protected static readonly MIN_MAJOR_VERSION: number = 2;
-  protected static readonly MIN_MINOR_VERSION: number = 3;
+  protected static readonly MIN_MINOR_VERSION: number = 2;
 
   protected window: Window;
   protected tizen: Tizen;
@@ -23,7 +24,7 @@ export default class Tizen23Adapter extends BaseAdapter implements Adapter {
     this.tizen = this.window.tizen;
     this.webapis = this.window.webapis;
     this.b2bapis = this.window.b2bapis;
-    this.system = new Tizen23System();
+    this.system = options.system ? options.system : new Tizen23System(window);
   }
 
   public init(): Promise<void> {
