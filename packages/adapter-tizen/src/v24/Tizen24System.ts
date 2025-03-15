@@ -1,7 +1,7 @@
-import { System } from '@hermestv/adapter-core';
+import { SystemControl } from '@hermestv/adapter-core';
 import Tizen23System from '../v23/Tizen23System';
 
-export default class Tizen24System extends Tizen23System implements System {
+export default class Tizen24System extends Tizen23System implements SystemControl {
   // Minimum required Tizen version
   protected static readonly MIN_MAJOR_VERSION = 2;
   protected static readonly MIN_MINOR_VERSION = 4;

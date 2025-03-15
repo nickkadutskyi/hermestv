@@ -1,1 +1,1 @@
-{"root":["./src/adapter.ts","./src/system.ts","./src/index.ts","./src/errors/index.ts"],"version":"5.8.2"}
+{"root":["./src/adapter.ts","./src/systemcontrol.ts","./src/index.ts","./src/types.ts","./src/errors/adaptererror.ts","./src/errors/adaptersystemcontrolerror.ts","./src/errors/errorcodes.ts","./src/errors/errordetails.ts","./src/errors/errormessages.ts","./src/errors/methodnotimplementederror.ts","./src/errors/methodwrapper.ts"],"version":"5.8.2"}

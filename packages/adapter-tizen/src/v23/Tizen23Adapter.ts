@@ -1,13 +1,13 @@
-import { type Adapter, type AdapterType, BaseAdapter, System } from '@hermestv/adapter-core';
+import { type Adapter, type AdapterType, BaseAdapter, SystemControl } from '@hermestv/adapter-core';
 import Tizen23System from './Tizen23System';
 
 export interface Options {
   window: Window;
-  system?: System;
+  system?: SystemControl;
 }
 
 export default class Tizen23Adapter extends BaseAdapter implements Adapter {
-  public system: System;
+  public system: SystemControl;
 
   // Minimum required Tizen version
   protected static readonly MIN_MAJOR_VERSION: number = 2;

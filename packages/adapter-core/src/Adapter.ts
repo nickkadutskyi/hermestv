@@ -1,16 +1,16 @@
-import { MethodNotImplementedError } from './errors/index.ts';
-import { System } from './System';
+import MethodNotImplementedError from './errors/MethodNotImplementedError';
+import { SystemControl } from './SystemControl';
 
 export type AdapterType = 'tizen' | 'webos' | 'brightsign' | 'android' | 'firetv' | 'browser';
 
 export interface Adapter {
-  system: System;
+  system: SystemControl;
   init(): Promise<void>;
   getType(): AdapterType;
 }
 
 export abstract class BaseAdapter implements Adapter {
-  abstract readonly system: System;
+  abstract readonly system: SystemControl;
 
   public abstract init(): Promise<void>;
 

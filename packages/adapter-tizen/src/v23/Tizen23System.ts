@@ -1,6 +1,6 @@
-import { BaseSystem, System } from '@hermestv/adapter-core';
+import { BaseSystemControl, SystemControl } from '@hermestv/adapter-core';
 
-export default class Tizen23System extends BaseSystem implements System {
+export default class Tizen23System extends BaseSystemControl implements SystemControl {
   protected window: Window;
   protected tizen: Tizen;
   protected webapis: Webapis;

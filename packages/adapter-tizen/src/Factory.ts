@@ -25,7 +25,6 @@ export default function createAdapter(window: Window): Adapter {
   ];
   for (const TizenAdapter of TizenVersions) {
     if (TizenAdapter.isPlatformSupported(window)) {
-      console.log(`Using Tizen adapter:`, TizenAdapter);
       return new TizenAdapter(opts);
     }
   }
