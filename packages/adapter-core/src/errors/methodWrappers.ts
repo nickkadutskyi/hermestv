@@ -5,7 +5,7 @@ import ErrorMessages from './ErrorMessages';
 
 type ErrorConstructor = new (params: BaseErrorParams, options: ErrorOptions) => AdapterError;
 
-export default function wrapMethod<T>(
+export function withErrorHandling<T>(
   method: () => T | Promise<T>,
   errorCode: ErrorCodes,
   ErrorClass: ErrorConstructor = AdapterError,

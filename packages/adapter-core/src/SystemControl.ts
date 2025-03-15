@@ -1,6 +1,6 @@
 import MethodNotImplementedError from './errors/MethodNotImplementedError.ts';
 import ErrorCodes from './errors/ErrorCodes.ts';
-import wrapMethod from './errors/methodWrapper.ts';
+import { withErrorHandling } from './errors/methodWrappers.ts';
 import AdapterSystemControlError from './errors/AdapterSystemControlError.ts';
 import type { ErrorMapping } from './types.ts';
 
@@ -13,7 +13,7 @@ export abstract class BaseSystemControl implements SystemControl {
   protected errorMappings: ErrorMapping = {};
 
   public getSerialNumber(): Promise<string> {
-    return wrapMethod(
+    return withErrorHandling(
       () => this._getSerialNumber(),
       ErrorCodes.SYSTEM_CONTROL_GET_SERIAL_NUMBER_ERROR,
       AdapterSystemControlError,
@@ -22,7 +22,7 @@ export abstract class BaseSystemControl implements SystemControl {
   }
 
   public getURLLauncherAddress(): Promise<string> {
-    return wrapMethod(
+    return withErrorHandling(
       () => this._getURLLauncherAddress(),
       ErrorCodes.SYSTEM_CONTROL_GET_URL_LAUNCHER_ADDRESS_ERROR,
       AdapterSystemControlError,
@@ -31,7 +31,7 @@ export abstract class BaseSystemControl implements SystemControl {
   }
 
   public captureScreen(): Promise<string> {
-    return wrapMethod(
+    return withErrorHandling(
       () => this._captureScreen(),
       ErrorCodes.SYSTEM_CONTROL_CAPTURE_SCREEN_ERROR,
       AdapterSystemControlError,
