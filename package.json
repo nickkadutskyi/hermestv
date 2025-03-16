@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc --build && vite build",
     "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts,.js",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "Nick Kadutskyi",
@@ -16,6 +18,8 @@
     "@stylistic/eslint-plugin": "^4.2.0",
     "@types/eslint": "^9.6.1",
     "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "globals": "^16.0.0",
     "typescript-eslint": "^8.26.0"
   }

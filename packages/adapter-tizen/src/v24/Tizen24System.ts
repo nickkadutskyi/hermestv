@@ -1,7 +1,7 @@
-import { SystemControl } from '@hermestv/adapter-core';
+// import { SystemControl } from '@hermestv/adapter-core';
 import Tizen23System from '../v23/Tizen23System';
 
-export default class Tizen24System extends Tizen23System implements SystemControl {
+export default class Tizen24System extends Tizen23System {
   // Minimum required Tizen version
   protected static readonly MIN_MAJOR_VERSION = 2;
   protected static readonly MIN_MINOR_VERSION = 4;
@@ -9,10 +9,11 @@ export default class Tizen24System extends Tizen23System implements SystemContro
   /**
    * @returns Serial number of the device
    */
-  public getSerialNumber(): Promise<string> {
+  protected _getSerialNumber(): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       try {
         const serialNumber = this.b2bapis.b2bcontrol.getSerialNumber();
+        throw new Error('getSerialNumber error for testing.');
         resolve(serialNumber);
       } catch (error) {
         reject(error);
@@ -24,7 +25,7 @@ export default class Tizen24System extends Tizen23System implements SystemContro
   /**
    * @returns URL in URL Launcher
    */
-  public getURLLauncherAddress(): Promise<string> {
+  protected _getURLLauncherAddress(): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       try {
         const url = this.b2bapis.b2bcontrol.getURLLauncherAddress();
@@ -40,7 +41,7 @@ export default class Tizen24System extends Tizen23System implements SystemContro
   /**
    * @returns Path to the captured screenshot
    */
-  public captureScreen(): Promise<string> {
+  protected _captureScreen(): Promise<string> {
     return new Promise((resolve, reject) => {
       try {
         this.b2bapis.b2bcontrol.captureScreen(

@@ -1,3 +1,4 @@
 packages:
-  - 'packages/*'
+  - packages/adapter-core
+  - packages/adapter-tizen
   - docs

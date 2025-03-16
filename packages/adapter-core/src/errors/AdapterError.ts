@@ -39,4 +39,13 @@ export default class AdapterError extends Error {
 
     Object.setPrototypeOf(this, AdapterError.prototype);
   }
+
+  protected changeErrorName(newName: string): void {
+    const currentName = this.name;
+    this.name = newName;
+    if (this.stack) {
+      const rg = new RegExp(`^${currentName}:`, 'g');
+      this.stack = this.stack.replace(rg, `${newName}:`);
+    }
+  }
 }

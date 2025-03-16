@@ -24,7 +24,7 @@
   "files": [
     "dist",
     "platform",
-    "README.md"
+    "CHANGELOG.md"
   ],
   "keywords": [
     "tizen",
@@ -32,6 +32,9 @@
     "smart-tv",
     "samsung"
   ],
+  "bugs": {
+    "url": "https://github.com/nickkadutskyi/hermestv/issues"
+  },
   "author": "Nick Kadutskyi",
   "license": "Apache-2.0",
   "devDependencies": {
@@ -40,6 +43,6 @@
     "vite-plugin-dts": "^4.5.3"
   },
   "dependencies": {
-    "@hermestv/adapter-core": "^0.1.6"
+    "@hermestv/adapter-core": "workspace:*"
   }
 }

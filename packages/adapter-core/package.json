@@ -17,7 +17,7 @@
   ],
   "files": [
     "dist",
-    "README.md"
+    "CHANGELOG.md"
   ],
   "exports": {
     ".": {
@@ -25,6 +25,9 @@
       "require": "./dist/hermestv-adapter-core.umd.cjs",
       "types": "./dist/index.d.ts"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/nickkadutskyi/hermestv/issues"
   },
   "author": "Nick Kadutskyi",
   "license": "Apache-2.0",

@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import stylistic from "@stylistic/eslint-plugin";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -32,4 +33,5 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...tseslint.configs.stylistic,
+  eslintPluginPrettierRecommended,
 ];

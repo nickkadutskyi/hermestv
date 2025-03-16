@@ -9,6 +9,9 @@ export interface SystemControl {
   getURLLauncherAddress(): Promise<string>;
   captureScreen(): Promise<string>;
 }
+
+// Only internal _* methods should be used in the implementation of the class
+// so that we can handle errors in a consistent way
 export abstract class BaseSystemControl implements SystemControl {
   protected errorMappings: ErrorMapping = {};
 
