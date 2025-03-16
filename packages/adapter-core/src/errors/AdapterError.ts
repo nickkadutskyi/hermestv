@@ -14,7 +14,7 @@ export default class AdapterError extends Error {
   public details?: string;
 
   constructor({ code, message, details }: BaseErrorParams, options?: ErrorOptions) {
-    super(`[${code}] ${message || ErrorMessages[code] || ErrorMessages[ErrorCodes.UNKNOWN_ERROR]}`, options);
+    super(`${message || ErrorMessages[code] || ErrorMessages[ErrorCodes.UNKNOWN_ERROR]}; CODE: ${code} `, options);
     this.name = 'AdapterError';
     if (options && options?.cause) {
       if (!('cause' in this)) {
@@ -23,12 +23,13 @@ export default class AdapterError extends Error {
       }
       let appendedMessage = '';
       if (this.cause instanceof Error) {
-        appendedMessage = ` CAUSED BY ${this.cause.name || 'Unknown'}: ${this.cause.message || 'Unknown'}`;
+        appendedMessage = `; CAUSE: ${this.cause.name || 'Unknown'}: ${this.cause.message || 'Unknown'}`;
         if (this.cause.stack) {
+          // Append the cause's stack trace to the current stack trace because error is recreated
           this.stack = `${this.stack}\nCAUSE: ${this.cause.stack}`;
         }
-      } else if (typeof this.cause === 'string') {
-        appendedMessage = ` CAUSED BY ${this.cause}`;
+      } else if (typeof this.cause === 'string' && this.cause.length > 0) {
+        appendedMessage = `; CAUSE: ${this.cause}`;
       }
       this.message = `${this.message}${appendedMessage}`;
     }
