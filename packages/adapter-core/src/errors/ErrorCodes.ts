@@ -1,7 +1,9 @@
 // Start all Adapter Errors with 10
 const PREFIX = '10';
 enum ErrorCodes {
-  UNKNOWN_ERROR = 'UNKNOWN_ERROR',
+  UNKNOWN_ERROR = '${PREFIX}0000',
+  // General errors start with 00
+  INSUFFICIENT_PRIVILEGES = `${PREFIX}0001`,
   // System Control errors start with 10
   SYSTEM_CONTROL_GET_SERIAL_NUMBER_ERROR = `${PREFIX}1001`,
   SYSTEM_CONTROL_GET_URL_LAUNCHER_ADDRESS_ERROR = `${PREFIX}1002`,

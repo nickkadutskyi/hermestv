@@ -1,4 +1,3 @@
-// import { SystemControl } from '@hermestv/adapter-core';
 import Tizen23System from '../v23/Tizen23System';
 
 export default class Tizen24System extends Tizen23System {
@@ -13,11 +12,18 @@ export default class Tizen24System extends Tizen23System {
     return new Promise<string>((resolve, reject) => {
       try {
         const serialNumber = this.b2bapis.b2bcontrol.getSerialNumber();
-        throw new Error('getSerialNumber error for testing.');
         resolve(serialNumber);
       } catch (error) {
+        console.log('Error getting serial number:', error);
+        const err = new Error('Error getting serial number');
+        console.log('Error: ', typeof error, error instanceof Error, error instanceof window.b2bapis.B2bAPIException);
+        console.log('Err: ', typeof err, err instanceof Error);
+        if (error instanceof Error) {
+          // console.log('Error code:', error.code);
+          console.log('Error message:', error.message);
+          console.log('Error name:', error.name);
+        }
         reject(error);
-        // reject(handleError(error as Error, 'get_serial_number_failed'));
       }
     });
   }
@@ -32,8 +38,6 @@ export default class Tizen24System extends Tizen23System {
         resolve(url);
       } catch (error) {
         reject(error);
-        // TODO: add proper error handling, and put it in shared package (core)
-        // reject(handleError(error as Error, 'get_url_launcher_address_failed'));
       }
     });
   }
@@ -54,7 +58,6 @@ export default class Tizen24System extends Tizen23System {
           },
         );
       } catch (error) {
-        // TODO: add proper error handling, and put it in shared package (core)
         reject(error);
       }
     });

@@ -5,6 +5,12 @@ declare global {
     b2bapis: B2bapis;
   }
 
+  interface B2bAPIException {
+    code: number;
+    message: string;
+    name: string;
+  }
+
   // TODO: Add all the types for Tizen
   interface Tizen {
     systeminfo: SystemInfoManager;
@@ -43,7 +49,7 @@ declare global {
     paymentdownload: null;
     payment: null;
     magicinfo: null;
-    B2bAPIExpecption: B2bAPIExpecptionEnum;
+    B2bAPIException: B2BAPIException;
   }
 }
 

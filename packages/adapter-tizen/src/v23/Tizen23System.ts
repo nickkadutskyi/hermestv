@@ -1,4 +1,4 @@
-import { BaseSystemControl, SystemControl } from '@hermestv/adapter-core';
+import { BaseSystemControl, SystemControl, ErrorCodes } from '@hermestv/adapter-core';
 
 export default class Tizen23System extends BaseSystemControl implements SystemControl {
   protected window: Window;
@@ -12,5 +12,7 @@ export default class Tizen23System extends BaseSystemControl implements SystemCo
     this.tizen = this.window.tizen;
     this.webapis = this.window.webapis;
     this.b2bapis = this.window.b2bapis;
+
+    this.errorMappings['SecurityError'] = ErrorCodes.UNKNOWN_ERROR;
   }
 }
