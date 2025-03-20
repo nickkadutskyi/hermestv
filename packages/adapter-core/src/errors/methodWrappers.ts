@@ -31,6 +31,20 @@ export function withErrorHandling<T>(
     return Promise.reject(createStandardizedError(error, errorCode, ErrorClass, platformErrorMappings, errorMessage));
   }
 }
+export function withErrorHandlingSync<T>(
+  method: () => T,
+  errorCode: ErrorCodes,
+  ErrorClass: ErrorConstructor = AdapterError,
+  platformErrorMappings?: ErrorMapping,
+  errorMessage?: string,
+): T {
+  try {
+    return method();
+  } catch (error) {
+    // This catches synchronous errors
+    throw createStandardizedError(error, errorCode, ErrorClass, platformErrorMappings, errorMessage);
+  }
+}
 
 // Helper function to create standardized error objects
 function createStandardizedError(
@@ -41,6 +55,7 @@ function createStandardizedError(
   errorMessage?: string,
 ): AdapterError {
   let code = errorCode;
+  let details: undefined | string = undefined;
   // Get main message based on the original error code
   const message = errorMessage || ErrorMessages[errorCode] || ErrorMessages[ErrorCodes.UNKNOWN_ERROR];
   let cause: Error | string | undefined;
@@ -50,7 +65,8 @@ function createStandardizedError(
 
     // If platform maps to a more specific error code, use that but keep original message
     if (platformErrorMappings && error.name in platformErrorMappings) {
-      code = platformErrorMappings[error.name];
+      code = platformErrorMappings[error.name][0];
+      details = platformErrorMappings[error.name][1];
     }
   } else if (typeof error === 'string') {
     cause = error;
@@ -60,6 +76,7 @@ function createStandardizedError(
     {
       code,
       message,
+      details,
     },
     { cause },
   );
